@@ -10,4 +10,5 @@ model = ViltForPreTrain('pytorch.bin')
 ```
 
 就可以使用啦，在forward时需要指明使用哪个head，inputs和labels参考官方文档，对于itm的labels需要给出(batch_size, 1)的tensor指明类别
+
 huggingface ViLT(mlm) doc: https://huggingface.co/docs/transformers/master/en/model_doc/vilt#transformers.ViltForMaskedLM
