@@ -40,12 +40,10 @@ class ViltForPreTrain(nn.Module):
             pooled_output = self.dense(outputs)
             pooled_output = self.activation(pooled_output)
             pooled_output = self.fc(pooled_output)
-            ## logits (2,)
             if labels != None:
-                return pooled_output[0], self.itm_loss_func(pooled_output, labels)
-            return pooled_output[0], None
-        ## logits (sentence_length, vocab_size)
+                return pooled_output, self.itm_loss_func(pooled_output, labels)
+            return pooled_output, None
         if labels != None:
-            return outputs['logits'][0], outputs['loss']
-        return outputs['logits'][0], None
+            return outputs['logits'], outputs['loss']
+        return outputs['logits'], None
 
