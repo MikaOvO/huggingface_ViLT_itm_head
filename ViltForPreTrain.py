@@ -1,16 +1,6 @@
 import torch
 from torch import nn
 from transformers import ViltProcessor, ViltForMaskedLM, ViltForQuestionAnswering, ViltModel
-import requests
-from PIL import Image
-import re
-import os
-import json
-from vqa_tools.PythonEvaluationTools.vqaEvaluation.vqaEval import VQAEval
-import os
-from vqa_tools.PythonHelperTools.vqaTools.vqa import VQA
-from utils import *
-
 
 class ViltForPreTrain(nn.Module):
     def __init__(self, path, hidden_size=768):
